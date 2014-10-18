@@ -4,11 +4,23 @@ module.exports = function (grunt) {
         browserify: {
             'build/app.js': ['dev/app.js']
         },
-        watch:{
-            files:['dev/**/*.js'],
-            tasks:['browserify']
+        uglify: {
+            options: {
+                banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
+            },
+            build: {
+                files: {
+                    'build/app.min.js': 'build/app.js'
+                }
+            }
+        },
+        watch: {
+            files: ['dev/**/*.js', 'build/**/*.js'],
+            tasks: ['browserify'],
+            tasks: ['uglify']
         }
     });
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 }

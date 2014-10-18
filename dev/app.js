@@ -1,6 +1,6 @@
-/**
- * Created by STEPHEN on 10/19/2014.
- */
-//var angular = require('angular');
+var app = angular.module('testApp', []);
 
-var app = angular.Module('app', []);
+app.controller('testController', function($scope, $log){
+    $log.info('Hello world!');
+    $scope.message = 'Hello world!';
+});
