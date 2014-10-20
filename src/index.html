@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myDatetimePickerApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../node_modules/bootstrap-datetimepicker/build/css/datepicker.css"/>
+    <link rel="stylesheet" href="../node_modules/jquery-timepicker/jquery.timepicker.css"/>
+</head>
+<body>
+
+<br>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Angular Datetime Picker
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="col-xs-3">
+                    <my-datetime-picker ng-model="selectedDatetime"></my-datetime-picker>
+                </div>
+            </div>
+            <div class="alert alert-info" role="alert" style="margin-top: 50px;">
+                <p>You have selected the date and time: <strong>{{selectedDatetime.format('LLL')}}</strong>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../node_modules/jquery-timepicker/jquery.timepicker.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../node_modules/bootstrap-datetimepicker/build/js/bootstrap-datepicker.js"></script>
+<script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/moment/moment.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
